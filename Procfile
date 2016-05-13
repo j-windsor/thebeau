@@ -1,0 +1,1 @@
+web: gunicorn thebeau.wsgi --log-file -

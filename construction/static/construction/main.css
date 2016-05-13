@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Overlock);
+
+.center{
+	height:300px;
+	width: 300px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+h1 {
+  font-family: 'Overlock', cursive;
+	text-align: center;
+}
+
+h2 {
+  font-family: 'Overlock', cursive;
+	text-align: center;
+}
