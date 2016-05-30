@@ -1,0 +1,30 @@
+{% extends "master/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+<!-- Main -->
+  <div id="main-wrapper">
+    <div id="main" class="container">
+      <div id="content">
+
+        <!-- Post -->
+          <article class="box post">
+            <header>
+              <h2>Our <strong>Team</strong>.</h2>
+            </header>
+            <div class="row">
+            {% for member in team_members.all %}
+            <div class="6u 12u(mobile)">
+              <h3>{{member.name}}</h3>
+              <img class="image" src="{% static member.image.name %}" alt="{{member.name}}" height="300px" width="100%" />
+              <p>{{member.description}}</p>
+              <a href="mailto:{{member.email}}">E-Mail {{member.name}}</a>
+            </div>
+            {% endfor %}
+            </div>
+          </article>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

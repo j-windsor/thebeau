@@ -43,7 +43,26 @@ jQuery(function($) {
     $('html, body').animate({
         scrollTop: $($(this).data('id')).offset().top
     }, 2000);
-});
+  });
+
+  //Contact Form Submit
+  $("#ContactForm").submit(function(e) {
+
+    var url = $("#ContactForm").attr("action"); // the script where you handle the form input.
+
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#ContactForm").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+               $('#ContactForm')[0].reset();
+           }
+         });
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+  });
 
 });
 

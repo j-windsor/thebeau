@@ -22,13 +22,13 @@
 					<div id="header" class="container">
 
 						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">Chateau De Beau</a></h1>
+							<h1 id="logo">Chateau De Beau</h1>
 							<p>Custom American made Bowties - Charlottesville, VA</p>
 
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li><a class="icon fa-home" href="index.html"><span>Home</span></a></li>
+									<li><a class="icon fa-home" href="{% url 'master:index' %}"><span>Home</span></a></li>
 									<li>
 										<a href="#" class="icon fa-gift"><span>Store</span></a>
 										<ul>
@@ -38,6 +38,13 @@
 										</ul>
 									</li>
 									<li><a class="icon fa-envelope scrollbutton" data-id="#footer-wrapper" href="#"><span>Contact</span></a></li>
+									<li>
+										<a href="#" class="icon fa-info"><span>About</span></a>
+										<ul>
+											<li><a href="{% url 'home:faq' %}">FAQ</a></li>
+											<li><a href="{% url 'home:our_team' %}">Our Team</a></li>
+										</ul>
+									</li>
 								</ul>
 							</nav>
 
@@ -55,9 +62,10 @@
   						<div class="row">
   							<div class="6u 12u(mobile)">
   								<section>
-  									<form method="post" action="#">
+  									<form id="ContactForm" action="{% url 'home:send_contact_mail' %}" method="POST">
   										<div class="row 50%">
   											<div class="6u 12u(mobile)">
+													{% csrf_token %}
   												<input name="name" placeholder="Name" type="text" />
   											</div>
   											<div class="6u 12u(mobile)">
@@ -71,7 +79,7 @@
   										</div>
   										<div class="row 50%">
   											<div class="12u">
-  												<a href="#" class="form-button-submit button icon fa-envelope">Send Message</a>
+  												<input type="submit" value="Send Message" id="ContactFormSubmit" class="form-button-submit button icon fa-envelope" />
   											</div>
   										</div>
   									</form>
@@ -129,7 +137,7 @@
   			<script src="/static/master/assets/js/skel-viewport.min.js"></script>
   			<script src="/static/master/assets/js/util.js"></script>
   			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  			<script src="/static/master/assets/js/main.js"></script>
+				<script src="/static/master/assets/js/main.js"></script>
 
   	</body>
   </html>

@@ -12,7 +12,7 @@
 
           <!-- Feature -->
             <section>
-              <a href="#" class="image featured"><img src="{% static 'master/images/pic01.jpg' %}" alt="" width="369px" height="247px" /></a>
+              <div class="image featured"><img src="{% static 'master/images/pic01.jpg' %}" alt="" width="369px" height="247px" /></div>
             </section>
 
         </div>
@@ -20,7 +20,7 @@
 
           <!-- Feature -->
             <section>
-              <a href="#" class="image featured"><img src="{% static 'master/images/pic02.png' %}" alt="" width="247px" height="247px" /></a>
+              <img src="{% static 'master/images/pic02.png' %}" alt="" width="247px" height="247px" />
             </section>
 
         </div>
@@ -28,7 +28,7 @@
 
           <!-- Feature -->
             <section>
-              <a href="#" class="image featured"><img src="{% static 'master/images/pic03.jpg' %}" alt="" width="369px" height="247px" /></a>
+              <div class="image featured"><img src="{% static 'master/images/pic03.jpg' %}" alt="" width="369px" height="247px" /></div>
             </section>
 
         </div>
@@ -91,6 +91,9 @@
                 mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
                 Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
               </article>
+              <ul class="actions">
+                <li><a href="{% url 'home:our_team' %}" class="button icon fa-file">Read More about out team</a></li>
+              </ul>
 
           </div>
 
@@ -121,7 +124,7 @@
                         </header>
                         <p>Or, if your question is personal, scroll down to contact us!</p>
                         <ul class="actions">
-                          <li><a href="#" class="button icon fa-file">FAQ</a></li>
+                          <li><a href="{% url 'home:faq' %}" class="button icon fa-file">FAQ</a></li>
                         </ul>
                       </article>
 
@@ -144,4 +147,4 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=108722906535";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-  {% endblock %}
+{% endblock %}

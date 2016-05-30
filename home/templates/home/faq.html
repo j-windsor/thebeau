@@ -1,0 +1,24 @@
+{% extends "master/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+<!-- Main -->
+  <div id="main-wrapper">
+    <div id="main" class="container">
+      <div id="content">
+
+        <!-- Post -->
+          <article class="box post">
+            <header>
+              <h2>This is our <strong>FAQ</strong>.</h2>
+            </header>
+            {% for item in faqitem.all %}
+            <h3>{{item.question}}</h3>
+            <p>{{item.answer}}</p>
+            {% endfor %}
+          </article>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
