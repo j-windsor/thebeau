@@ -1,6 +1,6 @@
-# Heroku Django Starter Template
+# Chateau De Beau Site
 
-An utterly fantastic project starter template for Django 1.9.
+Using Django Heroku Template
 
 ## Features
 
