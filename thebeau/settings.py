@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for thebeau project on Heroku. Fore more info, see:
 https://github.com/heroku/heroku-django-template
@@ -35,8 +37,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_wysiwyg',
+    'tinymce',
+    'storages',
     'construction',
+    'master',
+
 )
+
+DJANGO_WYSIWYG_FLAVOR = "tinymce"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -117,6 +126,9 @@ ALLOWED_HOSTS = ['*']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+MEDIA_ROOT = "thebeau/static/"
+#MEDIA_URL = "master/images/"
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'

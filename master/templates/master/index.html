@@ -1,0 +1,147 @@
+{% extends "master/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<!-- Features -->
+  <div id="features-wrapper">
+    <section id="features" class="container">
+      <header>
+        <h2>Starting out as an idea for a class project at the University of Virginia, <strong>Chateau de Beau</strong> has emerged as a <strong>stylish</strong> source of <strong>American Cotton Bow Ties</strong>.</h2>
+      </header>
+      <div class="row">
+        <div class="4u 12u(mobile)">
+
+          <!-- Feature -->
+            <section>
+              <a href="#" class="image featured"><img src="{% static 'master/images/pic01.jpg' %}" alt="" width="369px" height="247px" /></a>
+            </section>
+
+        </div>
+        <div class="4u 12u(mobile)">
+
+          <!-- Feature -->
+            <section>
+              <a href="#" class="image featured"><img src="{% static 'master/images/pic02.png' %}" alt="" width="247px" height="247px" /></a>
+            </section>
+
+        </div>
+        <div class="4u 12u(mobile)">
+
+          <!-- Feature -->
+            <section>
+              <a href="#" class="image featured"><img src="{% static 'master/images/pic03.jpg' %}" alt="" width="369px" height="247px" /></a>
+            </section>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <header>
+        <h2>What our customers gotta say...</h2>
+      </header>
+    <ul class="slider">
+    {% for t in testimonial.all %}
+    <li>
+      <div class="row">
+        <div class="4u 12u(mobile)">
+          <img class="image left" src="{% static t.image.name %}" alt="{{t.name}}" height="200px" width="200px" />
+        </div>
+        <div class="8u 12u(mobile)">
+          <h3>{{t.name}}</h3>
+          <h5>{{t.text}}</h5>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+    </ul>
+  </div>
+  </div>
+
+<!-- Banner -->
+  <div id="banner-wrapper">
+    <div class="inner">
+      <section id="banner" class="container">
+        <p>To paraphrase DMX <strong>"we gonna give it to ya,"</strong></br> it being bow ties at a reasonable price</br> and ya being a slang term for you the consumer.</p>
+      </section>
+    </div>
+  </div>
+
+<!-- Main -->
+  <div id="main-wrapper">
+    <div id="main" class="container">
+      <div class="row">
+
+        <!-- Content -->
+          <div id="content" class="8u 12u(mobile)">
+
+            <!-- Post -->
+              <article class="box post">
+                <header>
+                  <h2>Our story from founder <strong>Andrew Burrill</strong>.</h2>
+                </header>
+                <a href="#" class="image featured"><img src="/static/master/images/pic04.jpg" alt="" /></a>
+                <h3>Rainbows n' stuff.</h3>
+                <p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
+                ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
+                sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
+                in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
+                magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
+                consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
+                justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
+                mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
+                Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
+              </article>
+
+          </div>
+
+        <!-- Sidebar -->
+          <div id="sidebar" class="4u 12u(mobile)">
+
+
+            <!-- Highlights -->
+              <section>
+                <ul class="divided">
+                  <li>
+
+                    <!-- Highlight -->
+                      <article class="box highlight">
+                        <header>
+                          <h3><a href="#">Facebook</a></h3>
+                        </header>
+                        <div class="fb-page" data-href="https://www.facebook.com/ChateauDeBeau/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ChateauDeBeau/"><a href="https://www.facebook.com/ChateauDeBeau/">Chateau de Beau</a></blockquote></div></div>
+                      </article>
+
+                  </li>
+                  <li>
+
+                    <!-- Highlight -->
+                      <article class="box highlight">
+                        <header>
+                          <h3><a href="#">Still have more questions? Read our FAQ!</a></h3>
+                        </header>
+                        <p>Or, if your question is personal, scroll down to contact us!</p>
+                        <ul class="actions">
+                          <li><a href="#" class="button icon fa-file">FAQ</a></li>
+                        </ul>
+                      </article>
+
+                  </li>
+                </ul>
+              </section>
+
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=108722906535";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  {% endblock %}
