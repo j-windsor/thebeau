@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_wysiwyg',
     'tinymce',
-    'storages',
     'construction',
     'master',
     'home',
