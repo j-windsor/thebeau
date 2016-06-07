@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'send_contact_mail/$', views.send_contact_mail, name='send_contact_mail'),
     url(r'faq/$', views.faq, name='faq'),
     url(r'our_team/$', views.our_team, name='our_team'),
+    url(r'testimonials/$', views.testimonials, name='testimonials'),
 ]

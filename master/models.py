@@ -5,7 +5,7 @@ from tinymce.models import HTMLField
 
 class Testimonial(models.Model):
     name = models.CharField(max_length=50)
-    text = models.CharField(max_length=300)
+    text = models.TextField(max_length=300)
     image = models.ImageField()
     def __str__(self):
         return self.name

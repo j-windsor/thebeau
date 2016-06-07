@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from models import QuestionAndAnswer,TeamMember
+from master.models import Testimonial
 
 # Create your views here.
 
@@ -18,3 +19,6 @@ def faq(request):
 
 def our_team(request):
     return render(request, 'home/our_team.html', { 'team_members': TeamMember.objects})
+
+def testimonials(request):
+    return render(request, 'home/testimonials.html', { 'testimonial':Testimonial.objects })

@@ -1,0 +1,31 @@
+{% extends "master/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+<!-- Main -->
+  <div id="main-wrapper">
+    <div id="main" class="container">
+      <div id="content">
+
+        <!-- Post -->
+          <article class="box post">
+            <header>
+              <h2>Our customer <strong>Testimonials</strong>.</h2>
+            </header>
+            {% for t in testimonial.all %}
+              <div class="row">
+                <div class="4u 12u(mobile)">
+                  <img class="image left" src="{% static t.image.name %}" alt="{{t.name}}" height="200px" width="200px" />
+                </div>
+                <div class="8u 12u(mobile)">
+                  <h3>{{t.name}}</h3>
+                  <h5>{{t.text}}</h5>
+                </div>
+              </div>
+            {% endfor %}
+          </article>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
